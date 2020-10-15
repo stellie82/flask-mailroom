@@ -1,3 +1,5 @@
+"""Models to use in codebase"""
+
 import os
 
 from peewee import Model, CharField, IntegerField, ForeignKeyField
@@ -16,6 +18,14 @@ class Donor(Model):
 class Donation(Model):
     value = IntegerField()
     donor = ForeignKeyField(Donor, backref='donations')
+
+    class Meta:
+        database = db
+
+
+class User(Model):
+    name = CharField(max_length=255, unique=True)
+    password = CharField(max_length=255)
 
     class Meta:
         database = db
