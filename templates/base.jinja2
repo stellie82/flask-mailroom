@@ -3,7 +3,11 @@
 <title>Mailroom</title>
 </head>
 <body>
-	<h1>Donations</h1>
+	<nav>
+        <a id='home' href='{{url_for('home') }}'>Homepage</a>
+        <a id='create' href='{{url_for('create') }}'>Create a New Donation</a>
+    </nav>
+	<h1>Donations List</h1>
 	<h2>{% block subtitle %} {% endblock subtitle %}</h2>
 	{% block content %} {% endblock content %}
 </body>
